@@ -5,4 +5,5 @@ class TestScript(unittest.TestCase):
         self.assertEqual("Hello from GitHub!", "Hello from GitHub!")
 
 if __name__ == '__main__':
-    unittest.main()
+    with open('test-reports/results.xml', 'wb') as output:
+        unittest.main(testRunner=xmlrunner.XMLTestRunner(output=output), failfast=False, buffer=False, catchbreak=False)
